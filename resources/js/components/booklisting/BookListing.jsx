@@ -11,7 +11,9 @@ export const BookListing = (props) => {
                     </div>
                 </div>
                 <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                    <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">Add To Cart</a></div>
+                    <div className="text-center">
+                        <a onClick={() => console.log(props.id)} className="btn btn-outline-dark mt-auto" href="#">Add To Cart</a>
+                    </div>
                 </div>
             </div>
         </div>
