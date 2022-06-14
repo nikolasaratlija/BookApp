@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('book', [BooksController::class, 'index']);
-Route::post('book', [BooksController::class, 'post']);
+Route::get('books', [BooksController::class, 'index']);
+Route::post('books', [BooksController::class, 'post']);
