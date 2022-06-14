@@ -10,17 +10,22 @@ import ShoppingCart from './components/shoppingcart/ShoppingCart';
 
 function App() {
     const [isShoppingCartShown, showShoppingCart] = useState(false)
+    const [booksInCart, editBooksInCart] = useState([{ id: 1, title: 'test' }])
 
     const toggleShop = (show) => {
         showShoppingCart(show)
     }
 
+    const editBookCart = (book) => {
+        editBooksInCart(oldArray => [...oldArray, book])
+    }
+
     return (
         <div>
-            <Navbar toggleShop={toggleShop}></Navbar>
-            <ShoppingCart toggleShop={toggleShop} isShown={isShoppingCartShown}></ShoppingCart>
-            <Header></Header>
-            <BookListingContainer></BookListingContainer>
+            <Navbar toggleShop={toggleShop} />
+            <ShoppingCart booksInCart={booksInCart} toggleShop={toggleShop} isShown={isShoppingCartShown} />
+            <Header />
+            <BookListingContainer editBookCart={editBookCart} />
         </div>
     );
 }

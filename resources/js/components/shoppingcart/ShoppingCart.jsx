@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+import CartListing from './CartListing';
+import { Modal, Button } from 'react-bootstrap';
 
 const ShoppingCart = (props) => {
     return (
@@ -9,7 +9,13 @@ const ShoppingCart = (props) => {
                 <Modal.Header closeButton>
                     <Modal.Title>Shopping Cart</Modal.Title>
                 </Modal.Header>
-                <Modal.Body></Modal.Body>
+                <Modal.Body>
+
+                    <div className="container">
+                        {props.booksInCart.map(book => <CartListing key={book.id} title={book.title}/>)}
+                    </div>
+
+                </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={() => props.toggleShop(false)}>
                         Keep Shopping
