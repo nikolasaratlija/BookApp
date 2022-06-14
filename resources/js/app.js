@@ -3,15 +3,16 @@ require('./bootstrap');
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 
-import { BookListingContainer } from './components/BookListingContainer'
+import BookListingContainer from './components/booklisting/BookListingContainer'
+import Header from './components/header/Header';
+import Navbar from './components/nav/Navbar';
 
 function App() {
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <h1>Hello World!</h1>
-                <BookListingContainer></BookListingContainer>
-            </div>
+        <div>
+            <Navbar></Navbar>
+            <Header></Header>
+            <BookListingContainer></BookListingContainer>
         </div>
     );
 }
