@@ -22,7 +22,7 @@ function App() {
 
     return (
         <div>
-            <Navbar toggleShop={toggleShop} />
+            <Navbar toggleShop={toggleShop} booksInCart={booksInCart.length} />
             <ShoppingCart booksInCart={booksInCart} toggleShop={toggleShop} isShown={isShoppingCartShown} />
             <Header />
             <BookListingContainer editBookCart={editBookCart} />

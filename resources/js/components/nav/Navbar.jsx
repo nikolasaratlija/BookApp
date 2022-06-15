@@ -12,7 +12,7 @@ const Navbar = (props) => {
                 <Button onClick={() => props.toggleShop(true)} variant="outline-dark" type="submit">
                     <i className="bi-cart-fill me-1"></i>
                     Your Cart
-                    <span className="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    <span className="badge bg-dark text-white ms-1 rounded-pill">{props.booksInCart}</span>
                 </Button>
 
             </div>
