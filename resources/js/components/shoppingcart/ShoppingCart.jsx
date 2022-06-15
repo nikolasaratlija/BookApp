@@ -12,7 +12,7 @@ const ShoppingCart = (props) => {
                 <Modal.Body>
 
                     <div className="container">
-                        {props.booksInCart.map(book => <CartListing key={book.id} title={book.title}/>)}
+                        {props.booksInCart.map(book => <CartListing key={book.id} {...book}/>)}
                     </div>
 
                 </Modal.Body>

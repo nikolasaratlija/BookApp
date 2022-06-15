@@ -1,6 +1,13 @@
-import * as React from 'react'
+import React, { useState, useEffect } from 'react';
 
 export const BookListing = (props) => {
+    const [used, setUsed] = useState(false);
+
+    const buttonOnClick = () => {
+        props.editBookCart({ id: props.id, title: props.title })
+        setUsed(true)
+    }
+
     return (
         <div className="col mb-5">
             <div className="card h-100">
@@ -13,7 +20,9 @@ export const BookListing = (props) => {
                 <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div className="text-center">
 
-                        <a onClick={() => props.editBookCart({ id: props.id, title: props.title })} className="btn btn-outline-dark mt-auto" href="#">Add To Cart</a>
+                        {!used ?
+                            <a onClick={buttonOnClick} className="btn btn-outline-dark mt-auto" href="#">Add To Cart</a> :
+                            <a className="btn btn-success mt-auto" href="#">Added To Cart</a>}
 
                     </div>
                 </div>

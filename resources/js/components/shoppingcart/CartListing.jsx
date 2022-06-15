@@ -6,7 +6,7 @@ const CartListing = (props) => {
         <div className="row mt-2 pb-2 border-bottom">
 
             <div className="col-sm d-flex align-items-center">
-                <span>#1</span>
+                <span>{props.count}.</span>
             </div>
 
             <div className="col-sm d-flex align-items-center">

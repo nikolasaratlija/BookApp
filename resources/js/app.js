@@ -10,14 +10,14 @@ import ShoppingCart from './components/shoppingcart/ShoppingCart';
 
 function App() {
     const [isShoppingCartShown, showShoppingCart] = useState(false)
-    const [booksInCart, editBooksInCart] = useState([{ id: 1, title: 'test' }])
+    const [booksInCart, editBooksInCart] = useState([])
 
     const toggleShop = (show) => {
         showShoppingCart(show)
     }
 
     const editBookCart = (book) => {
-        editBooksInCart(oldArray => [...oldArray, book])
+        editBooksInCart(oldArray => [...oldArray, { count: booksInCart.length + 1, ...book }])
     }
 
     return (
